@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Go to app folder
+cd app/
+
+## eslint check
+yarn lint --max-warnings=0
+## prettier fixes
+yarn prettier:fix
