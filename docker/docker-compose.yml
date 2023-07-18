@@ -1,0 +1,11 @@
+version: "3.7"
+
+services: 
+  nestjs-project:
+    image: nestjs-project
+    env_file: ../.env
+    networks:
+      - nestjs-project-network
+
+networks:
+  nestjs-project-network: {}

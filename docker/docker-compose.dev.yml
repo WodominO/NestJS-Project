@@ -1,0 +1,14 @@
+version: "3.7"
+
+services: 
+  nestjs-project:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+      target: development
+    entrypoint: ["yarn", "start:dev"]
+    ports:
+      - "3000:80"
+    volumes:
+      - ../app:/var/www
+      - /var/www/node_modules # Do not share node_modules with host (why would you?)
